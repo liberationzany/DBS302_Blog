@@ -97,11 +97,11 @@ export default function LoginPage(): ReactNode {
         </form>
 
         <p style={{ marginTop: '1rem' }}>
-          Or sign in with password: <Link to="/login-password">Password login</Link> (if implemented).
+          Use the regular sign-up form if you don’t have an account yet: <Link to="/signup">Sign up</Link>.
         </p>
 
         <p style={{ marginTop: '0.5rem' }}>
-          Don&apos;t have an account? <Link to="/signup">Sign up</Link>
+          Or return to the <Link to="/">home page</Link>.
         </p>
       </main>
     </Layout>
