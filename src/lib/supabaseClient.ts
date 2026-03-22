@@ -1,19 +1,16 @@
 ﻿import { createClient } from '@supabase/supabase-js';
 
 const env = (() => {
-  // Use import.meta.env in browser/Vite context (avoid direct process access)
-  if (typeof import !== 'undefined' && typeof import.meta !== 'undefined' && (import.meta as any).env) {
-    return (import.meta as any).env;
+  // Use globalThis.importMeta.env if available (browser + Vite/Docusaurus).
+  const importMeta = (globalThis as any).importMeta || (globalThis as any).importMeta;
+  if (importMeta && importMeta.env) {
+    return importMeta.env;
   }
 
   // Use globalThis.process.env in Node-like contexts
-  if (
-    typeof globalThis !== 'undefined' &&
-    typeof (globalThis as any).process !== 'undefined' &&
-    (globalThis as any).process &&
-    (globalThis as any).process.env
-  ) {
-    return (globalThis as any).process.env;
+  const ghProcess = (globalThis as any).process;
+  if (ghProcess && ghProcess.env) {
+    return ghProcess.env;
   }
 
   return {};
