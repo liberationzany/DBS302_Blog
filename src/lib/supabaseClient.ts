@@ -6,9 +6,13 @@ const env = (() => {
     return (process as any).env;
   }
 
-  // Very old fallback for Vite-style import.meta.env (unlikely here but safe)
-  if (typeof import !== 'undefined' && typeof import.meta !== 'undefined' && (import.meta as any).env) {
-    return (import.meta as any).env;
+  // Fallback for environments exposing globalThis.process (safe fallback for SSR variants)
+  if (
+    typeof globalThis !== 'undefined' &&
+    (globalThis as any).process &&
+    (globalThis as any).process.env
+  ) {
+    return (globalThis as any).process.env;
   }
 
   return {};
