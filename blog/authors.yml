@@ -1,0 +1,21 @@
+sonamtenzin:
+  name: Sonam Tenzin
+  title: Ungraduate Software Engineer
+  url: https://github.com/liberationzany
+  image_url: https://github.com/liberationzany.png
+  page: true
+  socials:
+    x: "https://www.x.com"
+    linkedin: "https://www.linkedin.com"
+    github: "https://github.com/liberationzany"
+    newsletter: ""
+
+yangshun:
+  name: Yang Shun
+  title: Docusaurus Maintainer
+  url: https://docusaurus.io
+  image_url: https://avatars.githubusercontent.com/u/1325541?v=4
+  page: false
+  socials:
+    twitter: yangshun
+
