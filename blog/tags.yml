@@ -23,3 +23,12 @@ redis:
 
 nosql:
   label: NoSQL
+
+devops:
+  label: DevOps
+
+docker:
+  label: Docker
+
+mongodb:
+  label: MongoDB
